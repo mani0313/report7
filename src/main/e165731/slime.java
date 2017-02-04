@@ -13,6 +13,7 @@ class slime extends JPanel implements KeyListener {
     // パネルサイズ
     private static final int WIDTH = 200;
     private static final int HEIGHT = 200;
+    JPanel panel = Main.panel;
 
     // スライムのイメージ
     private Image slimeimage1, slimeimage2, slimeimage3, slimeimage4;
@@ -33,8 +34,20 @@ class slime extends JPanel implements KeyListener {
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-        // スライムのイメージを表示
-        g.drawImage(slimeimage1, 0, 0, this);
+        // カウントの値にそれぞれ設定したスライムのイメージを表示
+        if(count == 0) {
+            repaint();
+            g.drawImage(slimeimage1, 0, 0, this);
+        }else if(count == 1) {
+            repaint();
+            g.drawImage(slimeimage2, 0, 0, this);
+        }else if(count == 2) {
+            repaint();
+            g.drawImage(slimeimage3, 0, 0, this);
+        }else if(count == 3) {
+            repaint();
+            g.drawImage(slimeimage4, 0, 0, this);
+        }
     }
 
     public void keyPressed(KeyEvent e) {
@@ -43,7 +56,7 @@ class slime extends JPanel implements KeyListener {
 
         switch (keyCode) {
             case KeyEvent.VK_RIGHT:
-                // 右キーだったらカウント-1してそのカウントの画像表示
+                // 右キーだったらカウント-1
                 if (count >= 3) {
                     count = 0;
                 }else {
@@ -52,7 +65,7 @@ class slime extends JPanel implements KeyListener {
                 System.out.println(count);
                 break;
             case KeyEvent.VK_LEFT:
-                // 左キーだったらカウント+1してそのカウントの画像表示
+                // 左キーだったらカウント+1
                 if (count <= 0){
                     count = 3;
                 } else {
@@ -62,8 +75,9 @@ class slime extends JPanel implements KeyListener {
                 break;
         }
 
+
     }
-    public void keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent e) {//この２つ書かないとKeyEvent使えないっぽい
     }
     public void keyTyped(KeyEvent e) {
     }
