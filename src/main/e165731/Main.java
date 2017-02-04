@@ -3,8 +3,8 @@ package e165731;
 import java.awt.Container;
 import javax.swing.JFrame;
 
-    public class System extends JFrame {
-        public System() {
+    public class Main extends JFrame {
+        public Main() {
             // タイトルを設定
             setTitle("スライムがぐるぐるするだけ");
 
@@ -18,7 +18,7 @@ import javax.swing.JFrame;
         }
 
         public static void main(String[] args) {
-            System frame = new System();
+            Main frame = new Main();
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
         }
