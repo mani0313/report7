@@ -13,7 +13,6 @@ class slime extends JPanel implements KeyListener {
     // パネルサイズ
     private static final int WIDTH = 200;
     private static final int HEIGHT = 200;
-    JPanel panel = Main.panel;
 
     // スライムのイメージ
     private Image slimeimage1, slimeimage2, slimeimage3, slimeimage4;
