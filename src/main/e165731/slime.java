@@ -15,7 +15,7 @@ class slime extends JPanel implements KeyListener {
     private static final int HEIGHT = 200;
 
     // スライムのイメージ
-    private Image slimeimage1, slimeimage2, slimeimage3, slimeimage4;
+    private Image slimeimage0,slimeimage1, slimeimage2, slimeimage3, slimeimage4, slimeimage5, slimeimage6, slimeimage7, slimeimage8, slimeimage9;
     int count = 0;
 
     public slime() {
@@ -23,7 +23,7 @@ class slime extends JPanel implements KeyListener {
         setFocusable(true);
         addKeyListener(this);
 
-        // パネルの推奨サイズを設定
+        // パネルのサイズを設定
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
 
         // イメージをロード
@@ -36,16 +36,34 @@ class slime extends JPanel implements KeyListener {
         // カウントの値にそれぞれ設定したスライムのイメージを表示
         if(count == 0) {
             repaint();
-            g.drawImage(slimeimage1, 0, 0, this);
+            g.drawImage(slimeimage0, 0, 0, this);
         }else if(count == 1) {
             repaint();
-            g.drawImage(slimeimage2, 0, 0, this);
+            g.drawImage(slimeimage1, 0, 0, this);
         }else if(count == 2) {
             repaint();
-            g.drawImage(slimeimage3, 0, 0, this);
+            g.drawImage(slimeimage2, 0, 0, this);
         }else if(count == 3) {
             repaint();
+            g.drawImage(slimeimage3, 0, 0, this);
+        }else if(count == 4) {
+            repaint();
             g.drawImage(slimeimage4, 0, 0, this);
+        }else if(count == 5) {
+            repaint();
+            g.drawImage(slimeimage5, 0, 0, this);
+        }else if(count == 6) {
+            repaint();
+            g.drawImage(slimeimage6, 0, 0, this);
+        }else if(count == 7) {
+            repaint();
+            g.drawImage(slimeimage7, 0, 0, this);
+        }else if(count == 8) {
+            repaint();
+            g.drawImage(slimeimage8, 0, 0, this);
+        }else if(count == 9) {
+            repaint();
+            g.drawImage(slimeimage9, 0, 0, this);
         }
     }
 
@@ -56,7 +74,7 @@ class slime extends JPanel implements KeyListener {
         switch (keyCode) {
             case KeyEvent.VK_RIGHT:
                 // 右キーだったらカウント-1
-                if (count >= 3) {
+                if (count >= 9) {
                     count = 0;
                 }else {
                     count++;
@@ -66,7 +84,7 @@ class slime extends JPanel implements KeyListener {
             case KeyEvent.VK_LEFT:
                 // 左キーだったらカウント+1
                 if (count <= 0){
-                    count = 3;
+                    count = 9;
                 } else {
                     count--;
                 }
@@ -82,7 +100,9 @@ class slime extends JPanel implements KeyListener {
     }
 
     private void loadImage() {//ファイルのロード
-        ImageIcon icon = new ImageIcon(getClass().getResource("slime1.jpg"));
+        ImageIcon icon = new ImageIcon(getClass().getResource("slime0.jpg"));
+        slimeimage0 = icon.getImage();
+        icon = new ImageIcon(getClass().getResource("slime1.jpg"));
         slimeimage1 = icon.getImage();
         icon = new ImageIcon(getClass().getResource("slime2.jpg"));
         slimeimage2 = icon.getImage();
@@ -90,5 +110,15 @@ class slime extends JPanel implements KeyListener {
         slimeimage3 = icon.getImage();
         icon = new ImageIcon(getClass().getResource("slime4.jpg"));
         slimeimage4 = icon.getImage();
+        icon = new ImageIcon(getClass().getResource("slime5.jpg"));
+        slimeimage5 = icon.getImage();
+        icon = new ImageIcon(getClass().getResource("slime6.jpg"));
+        slimeimage6 = icon.getImage();
+        icon = new ImageIcon(getClass().getResource("slime7.jpg"));
+        slimeimage7 = icon.getImage();
+        icon = new ImageIcon(getClass().getResource("slime8.jpg"));
+        slimeimage8 = icon.getImage();
+        icon = new ImageIcon(getClass().getResource("slime9.jpg"));
+        slimeimage9 = icon.getImage();
     }
 }
